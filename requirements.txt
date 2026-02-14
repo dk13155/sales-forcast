@@ -1,9 +1,22 @@
+# Streamlit app
+streamlit==1.27.0       # latest stable compatible with Python 3.13
 
-streamlit==1.24.0
-pandas==2.1.3
-numpy==2.4.2
+# Data processing
+pandas==2.0.3           # latest prebuilt wheel for Python 3.13
+numpy==1.26.4           # compatible with streamlit and pandas
+
+# Plotting
 plotly==5.17.0
+
+# Optional: Prophet (use cmdstan backend to avoid compilation issues)
 prophet==1.2.5
+cmdstanpy==1.1.0
+
+# Utility
+python-dateutil==2.8.2
+pytz==2023.3
+tzdata==2023.3
+
 
 
 
