@@ -1,18 +1,10 @@
-# Core packages
-streamlit==1.24.1
-
-# Data processing
+numpy==1.26.0
 pandas==2.0.3
-numpy==1.25.2
+plotly==5.17.0
+pystan==3.5.1.1
+prophet==1.2.3
+streamlit==1.24.0
 
-# Plotting & forecasting
-matplotlib==3.8.1
-seaborn==0.12.3
-statsmodels==0.14.1
-pmdarima==2.2.0
 
-# Others
-scikit-learn==1.3.2
-plotly==5.15.0
 
 
