@@ -86,7 +86,7 @@ tab1, tab2 = st.tabs(["Historical Analysis", "Live Forecast"])
 # ---------------------------
 with tab1:
    
-        data = pd.read_csv("C:/Users/User/OneDrive/Desktop/Intership/sales_forecast_app/data/retail_sales_dataset.csv", parse_dates=['Date'])
+        data = pd.read_csv("retail_sales_dataset.csv", parse_dates=['Date'])
         
         # --- Date range filter ---
         min_date, max_date = st.date_input("Select Date Range", [data['Date'].min(), data['Date'].max()])
@@ -289,3 +289,4 @@ with tab2:
             key="live_download_final"
         )
         
+
