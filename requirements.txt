@@ -1,28 +1,7 @@
-# Streamlit
-streamlit==1.27.0
-
-# Core data packages
-pandas==2.0.3
-numpy==1.26.4
-
-# Visualization
-plotly==5.17.0
-matplotlib==3.8.0
-
-# Optional: forecasting
-prophet==1.2.5
-cmdstanpy==1.1.0
-
-# Utilities
-python-dateutil==2.8.2
-pytz==2023.3
-tzdata==2023.3
-rich==14.3.2
-
-
-
-
-
-
+streamlit
+pandas
+numpy
+plotly
+statsmodels
 
 
