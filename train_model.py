@@ -1,27 +1,44 @@
+# trainmodel.py
+
 import pandas as pd
-from prophet import Prophet
 import pickle
 import os
+from prophet import Prophet
 
-# --- Load CSV ---
-file_path = 'C:/Users/User/OneDrive/Desktop/Intership/sales_forecast_app/data/retail_sales_dataset.csv'  # Make sure your CSV is here
-data = pd.read_csv(file_path, parse_dates=['Date'])
 
-# --- Aggregate daily sales ---
-sales_data = data.groupby('Date')['Total Amount'].sum().reset_index()
-sales_data.rename(columns={'Date':'ds', 'Total Amount':'y'}, inplace=True)
+def train_model(csv_path):
+    """
+    Train Prophet model using CSV file
+    CSV must contain:
+    - Date
+    - Total Amount
+    """
 
-# --- Train Prophet model ---
-model = Prophet(daily_seasonality=True)
-model.fit(sales_data)
+    # Load data
+    df = pd.read_csv(csv_path, parse_dates=['Date'])
 
-# --- Create models folder ---
-if not os.path.exists('models'):
-    os.makedirs('models')
+    # Aggregate daily sales
+    df = df.groupby('Date')['Total Amount'].sum().reset_index()
 
-# --- Save trained model ---
-model_file = 'models/prophet_sales_model.pkl'
-with open(model_file, 'wb') as f:
-    pickle.dump(model, f)
+    # Rename columns for Prophet
+    df.rename(columns={'Date': 'ds', 'Total Amount': 'y'}, inplace=True)
 
-print(f"✅ Prophet model trained and saved as '{model_file}'")
+    # Initialize Prophet model
+    model = Prophet(daily_seasonality=True)
+
+    # Train model
+    model.fit(df)
+
+    # Create models folder if not exists
+    os.makedirs("models", exist_ok=True)
+
+    # Save trained model
+    with open("models/prophet_sales_model.pkl", "wb") as f:
+        pickle.dump(model, f)
+
+    print("✅ Model trained and saved successfully!")
+
+
+# Optional runner
+if __name__ == "__main__":
+    train_model("sales_data.csv")  # Change filename if needed
