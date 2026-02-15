@@ -1,3 +1,9 @@
+import os
+from train_model import train_model
+
+if not os.path.exists("models/prophet_sales_model.pkl"):
+    train_model("sales_data.csv")
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -291,4 +297,5 @@ with tab2:
             mime="text/csv",
             key="live_download_final"
         )
+
         
