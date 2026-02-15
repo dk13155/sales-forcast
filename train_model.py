@@ -41,4 +41,4 @@ def train_model(csv_path):
 
 # Optional runner
 if __name__ == "__main__":
-    train_model("sales_data.csv")  # Change filename if needed
+    train_model("C:/Users/User/OneDrive/Desktop/Intership/sales_forecast_app/data/retail_sales_dataset.csv")  # Change filename if needed
