@@ -85,11 +85,8 @@ tab1, tab2 = st.tabs(["Historical Analysis", "Live Forecast"])
 # Tab 1: Historical Analysis
 # ---------------------------
 with tab1:
-    st.markdown('<div class="text-card"><h2>📂 Upload CSV</h2><p>Analyze historical sales with KPIs, top products, trends, cumulative sales, and forecast.</p></div>', unsafe_allow_html=True)
-    uploaded_file = st.file_uploader("Upload your sales CSV", type="csv")
-    
-    if uploaded_file:
-        data = pd.read_csv(uploaded_file, parse_dates=['Date'])
+   
+        data = pd.read_csv("C:/Users/User/OneDrive/Desktop/Intership/sales_forecast_app/data/retail_sales_dataset.csv", parse_dates=['Date'])
         
         # --- Date range filter ---
         min_date, max_date = st.date_input("Select Date Range", [data['Date'].min(), data['Date'].max()])
