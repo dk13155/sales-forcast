@@ -29,11 +29,10 @@ def train_model(csv_path):
     # Train model
     model.fit(df)
 
-    # Create models folder if not exists
-    os.makedirs("models", exist_ok=True)
+    
 
     # Save trained model
-    with open("models/prophet_sales_model.pkl", "wb") as f:
+    with open("prophet_sales_model.pkl", "wb") as f:
         pickle.dump(model, f)
 
     print("✅ Model trained and saved successfully!")
