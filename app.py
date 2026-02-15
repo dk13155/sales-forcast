@@ -2,7 +2,7 @@ import os
 from train_model import train_model
 
 if not os.path.exists("models/prophet_sales_model.pkl"):
-    train_model("sales_data.csv")
+    train_model("C:/Users/User/OneDrive/Desktop/Intership/sales_forecast_app/data/retail_sales_dataset.csv")
 
 import streamlit as st
 import pandas as pd
@@ -299,3 +299,4 @@ with tab2:
         )
 
         
+
